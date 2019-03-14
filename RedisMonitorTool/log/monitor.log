@@ -1,0 +1,37 @@
+2018-12-03 13:37:28 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 13:41:07 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 13:41:21 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 14:16:16 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 14:21:15 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 14:26:15 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 14:31:15 ERROR [   Timer-0] MonitorTool.monitor(66) - exceed threshold:{mail=793586443@qq.com, maxmemoryHuman=37.25G, rate=99.95%, usedMemoryRssHuman=37.23G}
+2018-12-03 17:28:05 ERROR [      main] MonitorTool.main(36) - Start Success!
+2018-12-03 17:28:08 ERROR [   Timer-0] MonitorTool.monitor(45) - [192.168.6.13:6379] get jedis fail
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:226)
+	at com.hexing.tool.MonitorTool.monitor(MonitorTool.java:43)
+	at com.hexing.tool.MonitorTool$1.run(MonitorTool.java:31)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:207)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1767)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:106)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:819)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:429)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:360)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 5 more
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	... 12 more

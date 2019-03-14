@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Dec 03 15:30:20 CST 2018
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=RedisMonitorTool_fat.jar
+manifest.mergeall=true
+manifest.mainclass=com.hexing.tool.MonitorTool
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
